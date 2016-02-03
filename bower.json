@@ -1,0 +1,24 @@
+{
+  "name": "clothing-store-angular.js",
+  "description": "Clothing store in Angular.js 1",
+  "main": "index.js",
+  "authors": [
+    "Tom Barnes <ruralmyth@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "angular": "^1.4.9",
+    "angular-mocks": "^1.4.9",
+    "dd-bootstrap": "^0.1.3"
+  }
+}
