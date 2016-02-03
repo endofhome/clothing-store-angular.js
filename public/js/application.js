@@ -1,0 +1,1 @@
+var clothingStoreAngular = angular.module('ClothingStoreAngular', []);
