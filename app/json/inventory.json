@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Almond Toe Court Shoes, Patent Black",
+    "category": "Women's Footwear", 
+    "price": 99.00,
+    "quantity": 5, 
+    "image": "app/images/almond_toe_court_shoes.jpg"
+  },
+  {
+    "name": "Suede Shoes, Blue",
+    "category": "Women's Footwear",
+    "price": 42.00,
+    "quantity": 4, 
+    "image": "app/images/suede_shoes.jpg"
+  },
+  {
+    "name": "Leather Driver Saddle Loafers, Tan",
+    "category": "Men's Footwear",
+    "price": 34.00,
+    "quantity": 12, 
+    "image": "app/images/leather_driver_saddle_loafers.jpg"
+  },
+  {
+    "name": "Flip Flops, Red",
+    "category": "Men's Footwear",
+    "price": 19.00,
+    "quantity": 6,
+    "image": "app/images/flip_flops_red.jpg"
+  },
+  {
+    "name": "Flip Flops, Blue",
+    "category": "Men's Footwear",
+    "price": 19.00,
+    "quantity": 0,
+    "image": "app/images/flip_flops_blue.jpg"
+  },
+  {
+    "name": "Gold Button Cardigan, Black",
+    "category": "Women's Casual",
+    "price": 167.00,
+    "quantity": 6,
+    "image": "app/images/gold_button_cardigan.jpg"
+  },
+  {
+    "name": "Cotton Shorts, Medium Red",
+    "category": "Women's Casual",
+    "price": 30.00,
+    "quantity": 5,
+    "image": "app/images/cotton_shorts.jpg"
+  },    
+  {
+    "name": "Fine Stripe Short Sleeve Shirt, Grey",
+    "category": "Men's Casual",
+    "price": 49.99,
+    "quantity": 9,
+    "image": "app/images/fine_stripe_shirt_grey.jpg"
+  },
+  {
+    "name": "Fine Stripe Short Sleeve Shirt, Green",
+    "category": "Men's Casual",
+    "fullPrice": 49.99,
+    "price": 39.99,
+    "quantity": 3,
+    "image": "app/images/fine_stripe_shirt_green.jpg"
+  },
+  {
+    "name": "Sharkskin Waistcoat, Charcoal",
+    "category": "Men's Formal",
+    "price": 75.00,
+    "quantity": 2,
+    "image": "app/images/sharkskin_waistcoat.jpg"
+  }, 
+  {
+    "name": "Lightweight Patch Pocket Blazer, Deer",
+    "category": "Men's Formal",
+    "price": 175.50,
+    "quantity": 1,
+    "image": "app/images/lightweight_patch_pocket_blazer.jpg"
+  },
+  {
+    "name": "Bird Print Dress, Black",
+    "category": "Women's Formal",
+    "price": 270.00,
+    "quantity": 10,
+    "image": "app/images/bird_print_dress.jpg"
+  },
+  {
+    "name": "Mid Twist Cut-Out Dress, Pink",
+    "category": "Women's Formal",
+    "price": 540.00,
+    "quantity": 5,
+    "image": "app/images/mid_twist_dress_pink.jpg"
+  }
+]

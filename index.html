@@ -6,17 +6,47 @@
   <title>Clothing Store</title>
   <meta name="description" content="">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" media="all" href="public/css/style.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" media="all" href="app/css/style.css">
 </head>
 <body ng-controller="ClothingStoreAngularController as storeCtrl">
 
 <header>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ClothingStoreAngularJS<span class="green-dot">.</span></a>
+      <div class="navbar-btn">
+        <button type="button" class="btn btn-default" aria-label="Cart">
+          <span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+        </button>
+      </div>
+      
+    
+    </div>
+  </nav>
 </header>
 
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="public/js/application.js"></script>
-<script type="text/javascript" src="public/js/clothingStoreAngularController.js"></script>
+<div class="container-full" id="product">
+  <section class="row-full col-xs-12" ng-class-odd="'odd-row'" ng-class-even="'even-row'" ng-repeat="product in storeCtrl.inventory">
+    <div id="product-image-container" class="col-xs-6"><img ng-src="{{product.image}}" class="img-responsive product-image" alt="{{product.name}}" /></div>
+      <div id="product-info" class="col-xs-6">
+        <div id="product-name">{{product.name}}</div>
+        <div id="pricing">
+          <div id="full-price" ng-show="{{product.fullPrice}}">{{product.fullPrice | currency:"£":2}}</div>
+          <div id="on-sale" ng-show="{{product.fullPrice}}">ON SALE!</div>
+          <div id="price">{{product.price | currency:"£":2}}</div>
+          <div id="purchase">
+            <div id="out-of-stock" ng-show="{{product.quantity === 0}}">Sorry, out of stock!</div>
+            <button type="submit" class="btn btn-primary" ng-click="storeCtrl.addToCart()" ng-disabled="{{product.quantity === 0}}">Add to cart</button>
+          </div>
+        </div>
+      </div>
+  </section>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="app/js/application.js"></script>
+<script type="text/javascript" src="app/js/clothingStoreAngularController.js"></script>
 </body>
 </html>
