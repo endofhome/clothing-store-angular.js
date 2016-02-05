@@ -70,7 +70,7 @@ To run the feature tests from the root directory:
 
 * Finish implementing the full functionality.
 
-  This speaks for itself. I try not to leave commented code in my projects but left some in the controller.spec and controller file to show how I was thinking.
+  This speaks for itself. Most of the logic has been implemented in JavaScript but not yet "wired up" to the view. I try not to leave commented code in my projects but left some in the controller.spec and controller file to show how I was thinking.
 * move some of the controller logic into services.
 
   Predominantly the importing of JSON data. I feel that this should be refractored into services.
