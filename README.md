@@ -7,9 +7,24 @@ This application represents the frontend for an online clothing store. I decided
 
 As the focus was the frontend I decided against using a database for the initial prototype and instead used JSON for the shop inventory and available special offers.
 
-I'm still finding my feet with both JavaScript and AngularJS so found that I was still learning as I was going. I'm glad to say that my knowledge of both is such that TDD is now realistically achieavable which is fantastic. I did come across a few blockers while writing the code for this challenge but they were all solved by a quick visit to Stack Overflow or basic web search.
+I'm still finding my feet with both JavaScript and AngularJS so found that I was still learning as I was going. I'm glad to say that my knowledge of both is such that TDD is now realistically achievable, which is fantastic. I did come across a few blockers while writing the code for this challenge but they were all solved by a quick visit to Stack Overflow or basic web search.
 
-I didn't finish the user stories as I ran out of time, and there are some aspect of this project that I'm unhappy with. I plan to push some additional changes to a separate branch and when appropriate merge these to master. I have gone in to more detail about this at the bottom of the README. 
+I didn't finish the user stories as I ran out of time, and there are some aspect of this project that I'm unhappy with. I plan to push some additional changes to a separate branch and when appropriate merge these to master. I have gone in to more detail about this at the bottom of the README.
+
+
+### User stories
+
+``` 1. As a User I can add a product to my shopping cart.
+2. As a User I can remove a product from my shopping cart.
+3. As a User I can view the total price for the products in my shopping
+cart.
+4. As a User I can apply a voucher to my shopping cart.
+5. As a User I can view the total price for the products in my shopping cart
+with discounts applied.
+6. As a User I am alerted when I apply an invalid voucher to my shopping
+cart.
+7. As a User I am unable to Out of Stock products to the shopping cart. ```
+
 
 ### Usage
 
