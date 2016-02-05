@@ -17,7 +17,7 @@ Prerequisites:
 Node.js/NPM/Karma/Protractor installed on your machine.
 
 Clone this repo:
-``` git clone <repo address> ```
+``` git clone git@github.com:forty9er/clothing-store-angular.js.git ```
 
 Install dependencies:
 ``` npm install ```
