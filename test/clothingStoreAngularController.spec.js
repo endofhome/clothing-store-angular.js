@@ -38,4 +38,15 @@ describe('ClothingStoreAngularController', function() {
     });
   });
 
+  describe('shopping cart', function() {
+    it('has a cart', function() {
+      expect(ctrl.cart).toBeDefined();
+    });
+
+    it('products can be added', function() {
+      ctrl.addProduct(ctrl.inventory[0]);
+      expect(ctrl.cart).toContain(ctrl.inventory[0]);
+    });
+  });
+
 });
