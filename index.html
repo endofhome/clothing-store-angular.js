@@ -20,8 +20,6 @@
           <span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
         </button>
       </div>
-      
-    
     </div>
   </nav>
 </header>
@@ -37,7 +35,7 @@
           <div id="price">{{product.price | currency:"£":2}}</div>
           <div id="purchase">
             <div id="out-of-stock" ng-show="{{product.quantity === 0}}">Sorry, out of stock!</div>
-            <button type="submit" class="btn btn-primary" ng-click="storeCtrl.addToCart()" ng-disabled="{{product.quantity === 0}}">Add to cart</button>
+            <button type="submit" class="btn btn-primary" id="add-to-cart" ng-click="storeCtrl.addToCart()" ng-disabled="{{product.quantity === 0}}">Add to cart</button>
           </div>
         </div>
       </div>

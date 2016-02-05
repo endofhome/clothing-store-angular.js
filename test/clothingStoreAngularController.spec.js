@@ -16,7 +16,7 @@ describe('ClothingStoreAngularController', function() {
       "price": 35.00,
       "quantity": 10, 
       "image": "app/images/converse_all_stars.jpg"
-    },
+    }
   ];
 
   beforeEach(inject(function($controller) {
@@ -28,7 +28,7 @@ describe('ClothingStoreAngularController', function() {
     httpBackend
       .when("GET", "app/json/inventory.json")
       .respond(
-        { products: products }
+        ctrl.inventory = products
       );
   }));
 
