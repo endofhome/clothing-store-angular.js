@@ -5,9 +5,9 @@
 ### Approach
 This application represents the frontend for an online clothing store. I decided to use AngularJS for this project. It is written test-first using TDD, tests are written/run using Jasmine, Karma and Protractor.
 
-As the focus was the frontend I decided against using a database for the initial prototype and instead used JSON for the shop inventory and available special offers.
+As the focus was the frontend I decided against using a database for the initial prototype and instead used JSON for the shop inventory and available special offers. In order to have the store scale nicely on mobile and full size computer screens I used Twitter Bootstrap, primarily at this stage to scale images.
 
-I'm still finding my feet with both JavaScript and AngularJS so found that I was still learning as I was going. I'm glad to say that my knowledge of both is such that TDD is now realistically achievable, which is fantastic. I did come across a few blockers while writing the code for this challenge but they were all solved by a quick visit to Stack Overflow or basic web search.
+I'm still finding my feet with both JavaScript and AngularJS so found that I was still learning as I was going. I'm glad to say that my knowledge of both is such that TDD is now realistically achievable, which is fantastic. I did come across a few blockers while writing the code for this challenge but they were all solved by a quick visit to Stack Overflow or basic web search. I focussed on writing short JavaScript methods and trying to adhere to the software craftsmanship principles I learned at Makers Academy.
 
 I didn't finish the user stories as I ran out of time, and there are some aspect of this project that I'm unhappy with. I plan to push some additional changes to a separate branch and when appropriate merge these to master. I have gone in to more detail about this at the bottom of the README.
 
@@ -68,14 +68,20 @@ To run the feature tests from the root directory:
 ### TODO
 
 * Finish implementing the full functionality.
+
   This speaks for itself. I try not to leave commented code in my projects but left some in the controller.spec and controller file to show how I was thinking.
 * move some of the controller logic into services.
-  predominantly the importing of JSON data. I feel that this should be refractored into services.
-* review HTML markup
+
+  Predominantly the importing of JSON data. I feel that this should be refractored into services.
+* review HTML markup.
+
   I'm sure this could be better! <divs> all over the shop.
 * Don't use eval()!
+
   I didn't realise when I designed my system, and I've never used eval() before but I appreciate that it could be unsafe - I should find another way to implement the discounts.
-* Use some kind of CI system
+* Use some kind of CI system.
+
   I have experience with Travis.
-* Make the most of Twitter Bootstrap
+* Make the most of Twitter Bootstrap.
+
   I'm using Bootstrap to enable a better mobile experience, but I could better layout the show for larger screens and make more use of the space.
