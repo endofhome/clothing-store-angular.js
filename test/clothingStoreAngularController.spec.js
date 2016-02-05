@@ -18,6 +18,23 @@ describe('ClothingStoreAngularController', function() {
       "image": "app/images/converse_all_stars.jpg"
     }
   ];
+  var discounts = [
+    {
+      "name": "£5.00 off your order",
+      "code": "FIVEOFF",
+      "discount": 5.00
+    },
+    {
+      "name": "£10.00 off when you spend over £50.00",
+      "code": "TENOFF",
+      "discount": 10.00
+    },
+    {
+      "name": "£15.00 off when you have bought at least one footwear item and spent over £75.00",
+      "code": "FIFTEENOFF",
+      "discount": 15.00
+    }
+  ]
 
   beforeEach(inject(function($controller) {
     ctrl = $controller('ClothingStoreAngularController');
@@ -29,6 +46,11 @@ describe('ClothingStoreAngularController', function() {
       .when("GET", "app/json/inventory.json")
       .respond(
         ctrl.inventory = products
+      );
+    httpBackend
+      .when("GET", "app/json/offers.json")
+      .respond(
+        ctrl.offers = discounts
       );
   }));
 
@@ -63,6 +85,14 @@ describe('ClothingStoreAngularController', function() {
       ctrl.addProduct(ctrl.inventory[0]);
       ctrl.addProduct(ctrl.inventory[1]);
       expect(ctrl.totalPrice()).toEqual(100.00);
+      expect(ctrl.grandTotal()).toEqual(100.00);
+    });
+
+    it('vouchers can be used', function() {
+      ctrl.addProduct(ctrl.inventory[0]);
+      ctrl.addVoucher(ctrl.offers[0]);
+      expect(ctrl.totalDiscounts()).toEqual(5.00);
+      expect(ctrl.grandTotal()).toEqual(60.00);
     });
   });
 
