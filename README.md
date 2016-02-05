@@ -76,13 +76,13 @@ To run the feature tests from the root directory:
   Predominantly the importing of JSON data. I feel that this should be refractored into services.
 * review HTML markup.
 
-  I'm sure this could be better! <divs> all over the shop.
+  I'm sure this could be better! divs all over the shop.
 * Don't use eval()!
 
-  I didn't realise when I designed my system, and I've never used eval() before but I appreciate that it could be unsafe - I should find another way to implement the discounts.
+  I didn't realise when I designed my system and I've never used eval() before, but I appreciate that it could be unsafe - I should find another way to implement the discounts.
 * Use some kind of CI system.
 
   I have experience with Travis.
 * Make the most of Twitter Bootstrap.
 
-  I'm using Bootstrap to enable a better mobile experience, but I could better layout the show for larger screens and make more use of the space.
+  I'm using Bootstrap to enable a better mobile experience, but I could improve the layout the store for larger screens and make more use of the screen real-estate.
