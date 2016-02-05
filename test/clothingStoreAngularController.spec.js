@@ -11,28 +11,31 @@ describe('ClothingStoreAngularController', function() {
       "image": "app/images/blundstone_boots.jpg"
     },
     {
-      "name": "Converse All Stars, Orange",
-      "category": "Men's Footwear",
+      "name": "Cotton T-Shirt, White",
+      "category": "Men's Casual",
       "price": 35.00,
       "quantity": 10, 
-      "image": "app/images/converse_all_stars.jpg"
+      "image": "app/images/cotton_t_shirt.jpg"
     }
   ];
   var discounts = [
     {
       "name": "£5.00 off your order",
       "code": "FIVEOFF",
-      "discount": 5.00
+      "discount": 5.00,
+      "terms": "true"
     },
     {
       "name": "£10.00 off when you spend over £50.00",
       "code": "TENOFF",
-      "discount": 10.00
+      "discount": 10.00,
+      "terms": "((self.totalPrice()) >= 50.00)"
     },
     {
       "name": "£15.00 off when you have bought at least one footwear item and spent over £75.00",
       "code": "FIFTEENOFF",
-      "discount": 15.00
+      "discount": 15.00,
+      "terms": "((self.totalPrice > 75.00) && (self.checkForProduct('Footwear')))"
     }
   ]
 
@@ -60,7 +63,7 @@ describe('ClothingStoreAngularController', function() {
     });
   });
 
-  describe('shopping cart', function() {
+  describe('adding and removing products to shopping cart', function() {
     it('has a cart', function() {
       expect(ctrl.cart).toBeDefined();
     });
@@ -75,7 +78,9 @@ describe('ClothingStoreAngularController', function() {
       ctrl.removeProduct(ctrl.inventory[0]);
       expect(ctrl.cart).not.toContain(ctrl.inventory[0]);
     });
+  });
 
+  describe('calculating cart totals', function() {
     it('item prices can be added together', function() {
       var total = [65, 35];
       expect(ctrl.sumTotal(total)).toEqual(100);
@@ -87,12 +92,45 @@ describe('ClothingStoreAngularController', function() {
       expect(ctrl.totalPrice()).toEqual(100.00);
       expect(ctrl.grandTotal()).toEqual(100.00);
     });
+  });
 
+  describe('using vouchers', function() {
     it('vouchers can be used', function() {
       ctrl.addProduct(ctrl.inventory[0]);
       ctrl.addVoucher(ctrl.offers[0]);
       expect(ctrl.totalDiscounts()).toEqual(5.00);
       expect(ctrl.grandTotal()).toEqual(60.00);
+    });
+
+    it('vouchers are not validated', function() {
+      ctrl.addProduct(ctrl.inventory[1]);
+      expect(ctrl.validateVoucher(ctrl.offers[0])).toEqual(true);
+      expect(ctrl.validateVoucher(ctrl.offers[1])).toEqual(false);
+      expect(ctrl.validateVoucher(ctrl.offers[2])).toEqual(false);
+    });
+
+    it('vouchers are validated', function() {
+      ctrl.addProduct(ctrl.inventory[1]);
+      expect(ctrl.validateVoucher(ctrl.offers[0])).toEqual(true);
+      expect(ctrl.validateVoucher(ctrl.offers[1])).toEqual(false);
+      ctrl.addProduct(ctrl.inventory[1]);
+      expect(ctrl.validateVoucher(ctrl.offers[1])).toEqual(true);
+    });
+
+    // Writing a test to drive development of a method
+    // to enable the £15 voucher to be validated.
+
+    // it('can check for products of a certain category in the cart', function() {
+    //   expect(ctrl.checkForProduct).toBeDefined();
+    //   ctrl.addProduct(ctrl.inventory[1]);
+    //   expect(ctrl.checkForProduct('Footwear')).toEqual(false);
+    // });
+
+    it('£10 vouchers are not valid if order is under £50.00', function() {
+      ctrl.addProduct(ctrl.inventory[1]);
+      ctrl.addVoucher(ctrl.offers[1]);
+      expect(ctrl.totalDiscounts()).toEqual(0);
+      expect(ctrl.grandTotal()).toEqual(35.00);
     });
   });
 

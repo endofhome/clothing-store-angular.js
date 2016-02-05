@@ -35,14 +35,16 @@
     };    
 
     self.addVoucher = function(offer) { 
-      self.discounts.push(offer);
+      if (self.validateVoucher(offer)) {
+        self.discounts.push(offer);
+      }
     };
 
     self.totalDiscounts = function() {
       var offer;
       var total = [];
       for (offer in self.discounts) {
-       total.push(self.discounts[offer]["discount"]);
+        total.push(self.discounts[offer]["discount"]);
       }
       return self.sumTotal(total);
     };
@@ -50,6 +52,29 @@
     self.grandTotal = function() {
       return ((self.totalPrice()) - (self.totalDiscounts()));
     };
+
+    self.validateVoucher = function(offer) {
+      var result = false;
+      var terms = offer["terms"];
+      if ((eval(terms))===true) {
+        result = true;
+      }
+      return result;
+    };
+
+    // Working on a method to enable the £15 voucher to be accepted.
+
+    // self.checkForProduct = function(keyword) {
+    //   var result = false;
+    //   for (product in self.cart) {
+    //     if ((product["description"])===(str.match(keyword)))
+    //       result = true;
+    //       return result;
+    //     };
+    //     return result;
+    //   };
+    //   return result;
+    //  };
 
     $http.get("app/json/inventory.json").then(function (response) {
       self.inventory = response.data;

@@ -2,17 +2,19 @@
   {
     "name": "£5.00 off your order",
     "code": "FIVEOFF",
-    "discount": 5.00
+    "discount": 5.00,
+    "terms": "true"
   },
   {
     "name": "£10.00 off when you spend over £50.00",
     "code": "TENOFF",
-    "discount": 10.00
+    "discount": 10.00,
+    "terms": "((self.totalPrice()) >= 50.00)"
   },
   {
-    "name": "£15.00 off when you have bought at least one footwear item and spent
-over £75.00",
+    "name": "£15.00 off when you have bought at least one footwear item and spent over £75.00",
     "code": "FIFTEENOFF",
-    "discount": 15.00
+    "discount": 15.00,
+    "terms": "((self.totalPrice > 75.00) && (self.checkForProduct('Footwear')))"
   }
 ]
