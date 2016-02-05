@@ -53,6 +53,17 @@ describe('ClothingStoreAngularController', function() {
       ctrl.removeProduct(ctrl.inventory[0]);
       expect(ctrl.cart).not.toContain(ctrl.inventory[0]);
     });
+
+    it('item prices can be added together', function() {
+      var total = [65, 35];
+      expect(ctrl.sumTotal(total)).toEqual(100);
+    });
+
+    it('total price can be calculated', function() {
+      ctrl.addProduct(ctrl.inventory[0]);
+      ctrl.addProduct(ctrl.inventory[1]);
+      expect(ctrl.totalPrice()).toEqual(100.00);
+    });
   });
 
 });

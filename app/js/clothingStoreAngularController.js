@@ -16,6 +16,22 @@
       self.cart.splice(index, 1)
     };
 
+    self.totalPrice = function() {
+      var product;
+      var total = [];
+      for (product in self.cart) {
+       total.push(self.cart[product]["price"]);
+      }
+      return self.sumTotal(total);
+    };
+
+    self.sumTotal = function(total) {
+      var result = total.reduce(function(previousValue, currentValue, currentIndex, array) {
+        return previousValue + currentValue;
+      });
+      return result;
+    };    
+
     $http.get("app/json/inventory.json").then(function (response) {
       self.inventory = response.data;
     })
