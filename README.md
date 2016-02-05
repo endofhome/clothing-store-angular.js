@@ -60,6 +60,7 @@ To run the unit tests from the root directory:
 ``` karma start test/karma.conf.js ```
 
 To run the feature tests from the root directory:
+
 ``` webdriver-manager start ```
 
 ``` protractor test/e2e/conf.js ```
