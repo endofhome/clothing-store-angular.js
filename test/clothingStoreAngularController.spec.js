@@ -47,6 +47,12 @@ describe('ClothingStoreAngularController', function() {
       ctrl.addProduct(ctrl.inventory[0]);
       expect(ctrl.cart).toContain(ctrl.inventory[0]);
     });
+
+    it('products can be removed', function() {
+      ctrl.addProduct(ctrl.inventory[0]);
+      ctrl.removeProduct(ctrl.inventory[0]);
+      expect(ctrl.cart).not.toContain(ctrl.inventory[0]);
+    });
   });
 
 });
