@@ -21,4 +21,16 @@ describe('Clothing Store', function() {
     expect(element.all(by.css('#product-info')).first().element(by.css('#add-to-cart'))).toBeTruthy();
   });
 
+  it('the cart button has a dropdown menu', function() {
+    expect(element(by.css('.dropdown-menu')).isDisplayed()).toBe(false);
+    element(by.css('.dropdown-toggle')).click();
+    expect(element(by.css('.dropdown-menu')).isDisplayed()).toBe(true);
+  });
+
+  it('products are added to the cart', function() {
+    element.all(by.css('#add-to-cart')).first().click();
+    element(by.css('.dropdown-toggle')).click();
+    expect(element(by.css('.dropdown-menu')).getText()).toContain('Almond Toe Court Shoes, Patent Black')
+  });
+
 });

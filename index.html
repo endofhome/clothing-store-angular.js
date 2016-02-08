@@ -15,11 +15,19 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">ClothingStoreAngularJS<span class="green-dot">.</span></a>
-      <div class="navbar-btn">
-        <button type="button" class="btn btn-default" aria-label="Cart">
+      
+      <div class="navbar-btn dropdown pull-right">
+        <button type="button" class="btn btn-default dropdown-toggle" aria-label="Cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
         </button>
+        <ul class="dropdown-menu">
+          <li>My cart</li>
+          <div ng-repeat="product in storeCtrl.cart">
+            <li>{{product}}</li>
+          </div>
+        </ul>
       </div>
+
     </div>
   </nav>
 </header>
@@ -35,7 +43,7 @@
           <div id="price">{{product.price | currency:"£":2}}</div>
           <div id="purchase">
             <div id="out-of-stock" ng-show="{{product.quantity === 0}}">Sorry, out of stock!</div>
-            <button type="submit" class="btn btn-primary" id="add-to-cart" ng-click="storeCtrl.addToCart()" ng-disabled="{{product.quantity === 0}}">Add to cart</button>
+            <button type="submit" class="btn btn-primary" id="add-to-cart" ng-click="storeCtrl.addProduct(product.name)" ng-disabled="{{product.quantity === 0}}">Add to cart</button>
           </div>
         </div>
       </div>
@@ -44,6 +52,7 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="app/js/application.js"></script>
 <script type="text/javascript" src="app/js/clothingStoreAngularController.js"></script>
 </body>
